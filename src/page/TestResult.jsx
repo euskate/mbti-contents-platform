@@ -10,6 +10,7 @@ function TestResult() {
   const navigate = useNavigate();
   const { testParam, resultParam } = useParams();
   const [renderResultInfo, setRenderResultInfo] = useState({});
+  const [renderTestInfo, setRenderTestInfo] = useState({});
 
   useEffect(() => {
     console.log("testParam", testParam);
@@ -19,24 +20,29 @@ function TestResult() {
       //alert("존재하지 않는 테스트입니다.");
       navigate("/");
     }
+    setRenderResultInfo(testInfo);
 
     const resultInfo = testInfo?.results?.find(
       (result) => result.query === resultParam
     );
 
-    // 결과 주소가 틀리면 테스트로 
+    // 결과 주소가 틀리면 테스트로
     if (!resultInfo) {
       navigate(`/${testInfo?.info?.mainUrl}`);
     }
 
     // O
-    setRenderResultInfo(resultInfo)
+    setRenderResultInfo(resultInfo);
   }, [navigate, resultParam, testParam]);
   return (
     <div>
       <h1>TestResult</h1>
-      <TestResultRenderer renderResultInfo={renderResultInfo}/>
-      <ShareButtonGroup />
+      <TestResultRenderer renderResultInfo={renderResultInfo} />
+      <ShareButtonGroup
+        testParam={testParam}
+        resultParam={resultParam}
+        renderTestInfo={renderTestInfo}
+      />
       <ResultButtonGroup />
       <ResultThumbnailList />
     </div>
