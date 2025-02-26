@@ -34,6 +34,7 @@ function TestResult() {
     // O
     setRenderResultInfo(resultInfo);
   }, [navigate, resultParam, testParam]);
+
   return (
     <div>
       <h1>TestResult</h1>
@@ -43,7 +44,11 @@ function TestResult() {
         resultParam={resultParam}
         renderTestInfo={renderTestInfo}
       />
-      <ResultButtonGroup />
+      <ResultButtonGroup
+        testParam={testParam}
+        resultParam={resultParam}
+        renderTestInfo={renderTestInfo}
+      />
       <ResultThumbnailList />
     </div>
   );
