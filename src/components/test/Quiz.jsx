@@ -1,4 +1,7 @@
 import { useEffect, useState } from "react";
+import styles from "./quiz.module.css";
+import { Progress } from "antd";
+import { arrayShuffler } from "../../tools/tools";
 
 export const Quiz = ({ setMode, questions, mbtiScore, setMbtiScore }) => {
   const [questionNum, setQuestionNum] = useState(0);
@@ -7,6 +10,7 @@ export const Quiz = ({ setMode, questions, mbtiScore, setMbtiScore }) => {
     setMbtiScore({ ...mbtiScore });
     setQuestionNum((prev) => prev + 1);
   };
+  
 
   useEffect(() => {
     if (questionNum === questions.length) {
@@ -16,18 +20,24 @@ export const Quiz = ({ setMode, questions, mbtiScore, setMbtiScore }) => {
 
   return (
     <>
-      <h3>{questions[questionNum]?.question}</h3>
-      <button
-        onClick={() => onOptionClick(questions[questionNum]?.answers[0]?.type)}
-      >
-        {questions[questionNum]?.answers[0]?.content}
-      </button>
-      <button
-        onClick={() => onOptionClick(questions[questionNum]?.answers[0]?.type)}
-      >
-        {questions[questionNum]?.answers[1]?.content}
-      </button>
-      <div>프로그레스바</div>
+      <h3 className={styles.questionText}>
+        {questions[questionNum]?.question}
+      </h3>
+
+      {questions[questionNum]?.answers &&
+        arrayShuffler(questions[questionNum]?.answers)?.map((option, index) => (
+          <button
+            key={index}
+            className={styles.questionButton}
+            onClick={() => onOptionClick(option.type)}
+          >
+            {option.content}
+          </button>
+        ))}
+      <Progress
+        percent={(questionNum / questions.length) * 100}
+        showInfo={false}
+      />
     </>
   );
 };
