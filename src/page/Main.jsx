@@ -14,4 +14,5 @@ function Main() {
   );
 }
 
+// mbti.com?lang=Eng?cat=character
 export default Main;

@@ -1,7 +1,9 @@
 function MainBanner() {
   return (
     <>
-      <h1>MainBanner</h1>
+      <h1 style={{ border: "1px solid black", padding: "5rem" }}>
+        MBTI TEST Platform
+      </h1>
     </>
   );
 }
