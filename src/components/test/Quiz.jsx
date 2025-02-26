@@ -10,7 +10,6 @@ export const Quiz = ({ setMode, questions, mbtiScore, setMbtiScore }) => {
     setMbtiScore({ ...mbtiScore });
     setQuestionNum((prev) => prev + 1);
   };
-  
 
   useEffect(() => {
     if (questionNum === questions.length) {
@@ -38,6 +37,9 @@ export const Quiz = ({ setMode, questions, mbtiScore, setMbtiScore }) => {
         percent={(questionNum / questions.length) * 100}
         showInfo={false}
       />
+      <h4>
+        {questionNum} / {questions.length}
+      </h4>
     </>
   );
 };

@@ -49,7 +49,7 @@ function TestResult() {
         resultParam={resultParam}
         renderTestInfo={renderTestInfo}
       />
-      <ResultThumbnailList />
+      <ResultThumbnailList testParam={testParam} />
     </div>
   );
 }
