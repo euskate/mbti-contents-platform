@@ -28,7 +28,7 @@ const IntroRenderer = ({ currentTest }) => {
       />
     );
   } else if (mode === "loading") {
-    return <Loading />;
+    return <Loading mbtiScore={mbtiScore} currentTest={currentTest}/>;
   } else {
     return <div> 잘못된 페이지입니다 </div>;
   }
