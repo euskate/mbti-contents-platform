@@ -1,8 +1,12 @@
 import Lottie from "react-lottie";
 import * as animationData from "../../assets/loading-animation.json";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Loading = ({ mbtiScore, currentTest }) => {
+  const navigate = useNavigate();
+  const [finalQuery, setFinalQuery] = useState("");
+
   const defaultOption = {
     loop: true,
     autoplay: true,
@@ -11,6 +15,9 @@ export const Loading = ({ mbtiScore, currentTest }) => {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
+
+  // 로딩타임 -> 3.7초
+  const loadingTime = 3700; // ms
 
   useEffect(() => {
     const mbtiPairs = [
@@ -35,7 +42,18 @@ export const Loading = ({ mbtiScore, currentTest }) => {
       (result) => result?.type === resultType
     )?.query;
     console.log("resultQuery", resultQuery);
+    setFinalQuery(resultQuery);
   }, [mbtiScore, currentTest]);
+
+  useEffect(() => {
+    let timeout = setTimeout(() => {
+      finalQuery &&
+        navigate(`/${currentTest?.info?.mainUrl}/result/${finalQuery}`);
+    }, loadingTime);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [currentTest?.info?.mainUrl, finalQuery, loadingTime, navigate]);
 
   return (
     <Lottie
