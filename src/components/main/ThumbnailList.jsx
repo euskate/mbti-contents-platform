@@ -9,13 +9,19 @@ function ThumbnailList() {
 
   useEffect(() => {
     const currentLanguage = searchParams.get("lang") || "Kor";
-
-    console.log(currentLanguage);
-    if (currentLanguage) {
-      const languageFilteredTest = TESTS.filter(
+    const currentCategory = searchParams.get("cat");
+    if (currentCategory) {
+      const FilteredTest = TESTS.filter(
+        (test) =>
+          test?.info?.lang === currentLanguage &&
+          test?.info.category === currentCategory
+      );
+      setTestList(FilteredTest);
+    } else {
+      const FilteredTest = TESTS.filter(
         (test) => test?.info?.lang === currentLanguage
       );
-      setTestList(languageFilteredTest);
+      setTestList(FilteredTest);
     }
   }, [searchParams]);
 
