@@ -5,7 +5,6 @@ import {
   RedoOutlined,
   ReloadOutlined,
 } from "@ant-design/icons";
-import { base_url } from "../../App";
 import { useNavigate } from "react-router-dom";
 import styles from "./resultButtonGroup.module.css";
 
@@ -16,7 +15,7 @@ export const ResultButtonGroup = ({
 }) => {
   const navigate = useNavigate();
   const [copiedText, copy] = useCopyToClipboard();
-  const share_url = `${base_url}/${testParam}/result/${resultParam}`;
+  const share_url = `/${testParam}/result/${resultParam}`;
 
   const onClickRedo = () => {
     navigate(`/${testParam}`);

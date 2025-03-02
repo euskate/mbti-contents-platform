@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { TESTS } from "../../data/TESTS";
-import { base_url } from "../../App";
+
 import { Link, useSearchParams } from "react-router-dom";
 
 function ThumbnailList() {
@@ -29,7 +29,7 @@ function ThumbnailList() {
     <>
       {testList?.map((test) => (
         <Link
-          to={`${base_url}/${test?.info?.mainUrl}`}
+          to={`/${test?.info?.mainUrl}`}
           key={test?.info?.mainUrl}
         >
           <img
