@@ -7,6 +7,8 @@ import {
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import styles from "./resultButtonGroup.module.css";
+import { eventSenderGA } from "../../tools/tools";
+import { base_url } from "../../App";
 
 export const ResultButtonGroup = ({
   testParam,
@@ -15,24 +17,26 @@ export const ResultButtonGroup = ({
 }) => {
   const navigate = useNavigate();
   const [copiedText, copy] = useCopyToClipboard();
-  const share_url = `/${testParam}/result/${resultParam}`;
+  const share_url = `${base_url}/${testParam}/result/${resultParam}`;
+
+  const onClickCopyUrl = () => {
+    eventSenderGA("Copy", "Copy Url Button", "Result");
+    copy(share_url);
+    alert("URL이 복사되었습니다.");
+  };
 
   const onClickRedo = () => {
+    eventSenderGA("Paging", "Click Re-do Button", "Result");
     navigate(`/${testParam}`);
   };
   const onClickHome = () => {
+    eventSenderGA("Paging", "Click Go Home Button", "Result");
     navigate("/");
   };
   return (
     <div className={styles.mainDiv}>
       <div className={styles.upperDiv}>
-        <button
-          className={styles.upperButton}
-          onClick={() => {
-            copy(share_url);
-            alert("URL이 복사되었습니다.");
-          }}
-        >
+        <button className={styles.upperButton} onClick={onClickCopyUrl}>
           {/* <LinkOutlined /> */}
           <LinkOutlined />
           &nbsp;링크 복사

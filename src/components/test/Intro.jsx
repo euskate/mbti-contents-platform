@@ -1,7 +1,9 @@
+import { eventSenderGA } from "../../tools/tools";
 import IntroButtonGroup from "./IntroButtonGroup";
 
 const Intro = ({ info, setMode }) => {
   const onImageClick = () => {
+    eventSenderGA("Paging", "Test Start Button", "Intro");
     setMode("quiz");
   };
   return (
@@ -9,7 +11,6 @@ const Intro = ({ info, setMode }) => {
       <h1>{info?.mainTitle}</h1>
       <h3>{info?.subTitle}</h3>
       <img
-
         onClick={onImageClick}
         src={info?.mainImage}
         alt={info?.mainTitle}
@@ -21,7 +22,7 @@ const Intro = ({ info, setMode }) => {
         </span>
         로 여러분의 성향을 테스트해보세요!
       </p>
-      <IntroButtonGroup />
+      <IntroButtonGroup testParam={info?.mainUrl} />
     </>
   );
 };

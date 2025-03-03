@@ -17,7 +17,7 @@ function App() {
         },
       },
     ]);
-  });
+  }, []);
   return (
     <>
       <BrowserRouter>
@@ -36,3 +36,10 @@ function App() {
 }
 
 export default App;
+
+
+// 유저의 액션마다 GA붙이기
+// Test StartButton(Intro)
+// Copy Test Link Button(Intro, Result)
+// Go-to-another Test Button (Result)
+// Go-to-other Tests Button(Intro, Result)
