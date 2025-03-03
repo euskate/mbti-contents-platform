@@ -16,15 +16,15 @@ function Main() {
     const catList = ["love", "characteristic"];
 
     if (!langList.includes(lang)) {
-      alert("올바르지 않은 언어입니다.");
+      console.log("올바르지 않은 언어입니다.");
       navigate("/");
     }
 
     if (!catList.includes(cat)) {
-      alert("올바르지 않은 카테고리입니다.");
+      console.log("올바르지 않은 카테고리입니다.");
       navigate("/");
     }
-  }, []);
+  }, [cat, lang]);
   return (
     <>
       <LanguageIcons />
