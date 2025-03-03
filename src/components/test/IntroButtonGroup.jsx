@@ -1,9 +1,5 @@
 const IntroButtonGroup = () => {
-  return (
-    <>
-      <h1>IntroButtonGroup</h1>
-    </>
-  );
+  return <></>;
 };
 
 export default IntroButtonGroup;

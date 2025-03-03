@@ -37,7 +37,6 @@ function TestResult() {
 
   return (
     <div>
-      <h1>TestResult</h1>
       <TestResultRenderer renderResultInfo={renderResultInfo} />
       <ShareButtonGroup
         testParam={testParam}
