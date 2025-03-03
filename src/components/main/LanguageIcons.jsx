@@ -9,7 +9,6 @@ function LanguageIcons() {
 
   return (
     <>
-      <h1>LanguageIcons</h1>
       <CircleFlag
         className={styles.flagIcon}
         onClick={() => onButtonClick("Kor")}

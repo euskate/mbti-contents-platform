@@ -4,6 +4,7 @@ import Test from "./page/Test";
 import TestResult from "./page/TestResult";
 import { useEffect } from "react";
 import ReactGA4 from "react-ga4";
+import Privacy from "./page/Privacy";
 
 export const base_url = "https://mbti-service.shop";
 
@@ -29,6 +30,7 @@ function App() {
             path="/:testParam/result/:resultParam"
             element={<TestResult />}
           />
+          <Route path="privacy" element={<Privacy />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -36,7 +38,6 @@ function App() {
 }
 
 export default App;
-
 
 // 유저의 액션마다 GA붙이기
 // Test StartButton(Intro)
