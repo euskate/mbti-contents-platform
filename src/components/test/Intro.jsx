@@ -1,4 +1,5 @@
 import { eventSenderGA } from "../../tools/tools";
+import KakaoAdfit from "../KakaoAdfit";
 import IntroButtonGroup from "./IntroButtonGroup";
 
 const Intro = ({ info, setMode }) => {
@@ -16,6 +17,7 @@ const Intro = ({ info, setMode }) => {
         alt={info?.mainTitle}
         style={{ width: "100%", cursor: "pointer" }}
       />
+      <KakaoAdfit />
       <p>
         <span style={{ fontWeight: "bold", color: "brown" }}>
           {info?.mainTitle}
