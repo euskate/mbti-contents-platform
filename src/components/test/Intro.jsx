@@ -1,4 +1,5 @@
 import { eventSenderGA } from "../../tools/tools";
+import { AdsenseUnit } from "../AdsenseUnit";
 import { CoupangDynamicBanner } from "../CoupangDynamicBanner";
 import KakaoAdfit from "../KakaoAdfit";
 import IntroButtonGroup from "./IntroButtonGroup";
@@ -18,6 +19,7 @@ const Intro = ({ info, setMode }) => {
         alt={info?.mainTitle}
         style={{ width: "100%", cursor: "pointer" }}
       />
+      <AdsenseUnit slot={"9287124230"} />
       <KakaoAdfit />
       <CoupangDynamicBanner unit={"introBanner"} />
       <p>
