@@ -1,7 +1,7 @@
-import { base_url } from "../App";
+import { base_url } from "../../App";
 import { useEffect } from "react";
 
-export const MetatagRenderer = ({ currentTest }) => {
+export const IntroMetatagRenderer = ({ currentTest }) => {
   useEffect(() => {
     document.title = currentTest?.info?.mainTitle;
   }, [currentTest?.info?.mainTitle]);

@@ -4,6 +4,7 @@ import LanguageIcons from "../components/main/LanguageIcons";
 import MainBanner from "../components/main/MainBanner";
 import ThumbnailList from "../components/main/ThumbnailList";
 import { useEffect } from "react";
+import MainMetatagRenderer from "../components/metatagRenderer/MainMetatagRenderer";
 
 function Main() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ function Main() {
   // }, [cat, lang]);
   return (
     <>
+      <MainMetatagRenderer />
       <LanguageIcons />
       <MainBanner />
       <CategoryButtons />
