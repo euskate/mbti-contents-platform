@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { TESTS } from "../../data/TESTS";
+import { Skeleton } from "antd";
 
 import { Link, useSearchParams } from "react-router-dom";
 
@@ -27,18 +28,19 @@ function ThumbnailList() {
 
   return (
     <>
-      {testList?.map((test) => (
-        <Link
-          to={`/${test?.info?.mainUrl}`}
-          key={test?.info?.mainUrl}
-        >
-          <img
-            src={test?.info?.thumbImage}
-            alt={test?.info?.mainUrl}
-            style={{ width: "100%" }}
-          />
-        </Link>
-      ))}
+      {testList ? (
+        testList?.map((test) => (
+          <Link to={`/${test?.info?.mainUrl}`} key={test?.info?.mainUrl}>
+            <img
+              src={test?.info?.thumbImage}
+              alt={test?.info?.mainUrl}
+              style={{ width: "100%" }}
+            />
+          </Link>
+        ))
+      ) : (
+        <Skeleton active style={{ height: "20rem" }} />
+      )}
     </>
   );
 }
