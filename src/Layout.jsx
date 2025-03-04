@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Footer } from "./components/footer";
+import { Footer } from "./components/Footer";
 import styles from "./layout.module.css";
 
 const Layout = ({ children }) => {
