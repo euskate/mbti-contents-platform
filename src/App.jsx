@@ -44,3 +44,6 @@ export default App;
 // Copy Test Link Button(Intro, Result)
 // Go-to-another Test Button (Result)
 // Go-to-other Tests Button(Intro, Result)
+
+// SPA(Single Page Application) & CSR
+// html 

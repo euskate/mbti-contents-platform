@@ -4,6 +4,7 @@ import LanguageIcons from "../components/main/LanguageIcons";
 import MainBanner from "../components/main/MainBanner";
 import ThumbnailList from "../components/main/ThumbnailList";
 import { useEffect } from "react";
+import { Helmet } from "react-helmet";
 
 function Main() {
   const navigate = useNavigate();
@@ -11,20 +12,20 @@ function Main() {
   const cat = searchParams.get("cat");
   const lang = searchParams.get("lang");
 
-  useEffect(() => {
-    const langList = ["Kor", "Eng", "JP"];
-    const catList = ["love", "characteristic"];
+  // useEffect(() => {
+  //   const langList = ["Kor", "Eng", "JP"];
+  //   const catList = ["love", "characteristic"];
 
-    if (!langList.includes(lang)) {
-      console.log("올바르지 않은 언어입니다.");
-      navigate("/");
-    }
+  //   if (!langList.includes(lang)) {
+  //     console.log("올바르지 않은 언어입니다.");
+  //     navigate("/");
+  //   }
 
-    if (!catList.includes(cat)) {
-      console.log("올바르지 않은 카테고리입니다.");
-      navigate("/");
-    }
-  }, [cat, lang]);
+  //   if (!catList.includes(cat)) {
+  //     console.log("올바르지 않은 카테고리입니다.");
+  //     navigate("/");
+  //   }
+  // }, [cat, lang]);
   return (
     <>
       <LanguageIcons />
