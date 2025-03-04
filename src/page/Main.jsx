@@ -4,7 +4,6 @@ import LanguageIcons from "../components/main/LanguageIcons";
 import MainBanner from "../components/main/MainBanner";
 import ThumbnailList from "../components/main/ThumbnailList";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet";
 
 function Main() {
   const navigate = useNavigate();
