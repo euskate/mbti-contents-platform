@@ -37,6 +37,7 @@ function TestResult() {
 
   return (
     <div>
+      {/* 추후 결과 메타태그렌더러 추가 <ResultMetatagRenderer /> */}
       <TestResultRenderer renderResultInfo={renderResultInfo} />
       <ShareButtonGroup
         testParam={testParam}
