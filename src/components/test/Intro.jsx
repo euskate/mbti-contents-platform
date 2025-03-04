@@ -1,4 +1,5 @@
 import { eventSenderGA } from "../../tools/tools";
+import { CoupangDynamicBanner } from "../CoupangDynamicBanner";
 import KakaoAdfit from "../KakaoAdfit";
 import IntroButtonGroup from "./IntroButtonGroup";
 
@@ -18,6 +19,7 @@ const Intro = ({ info, setMode }) => {
         style={{ width: "100%", cursor: "pointer" }}
       />
       <KakaoAdfit />
+      <CoupangDynamicBanner unit={"introBanner"} />
       <p>
         <span style={{ fontWeight: "bold", color: "brown" }}>
           {info?.mainTitle}
