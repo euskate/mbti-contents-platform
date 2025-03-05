@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <>
-      <h5>
+      {/* <h5>
         광고 및 후원 문의
         <br /> Advertising and Sponsorship Contact
       </h5>
@@ -16,7 +16,7 @@ export const Footer = () => {
         유선번호: ---
         <br />
         신고번호: ---
-      </p>
+      </p> */}
       <p>
         Disclaimer:<br></br>All content is provided for fun and entertainment
         purposes only

@@ -46,4 +46,4 @@ export default App;
 // Go-to-other Tests Button(Intro, Result)
 
 // SPA(Single Page Application) & CSR
-// html 
+// npm i puppeteer @prerenderer/renderer-puppeteer @prerenderer/rollup-plugin

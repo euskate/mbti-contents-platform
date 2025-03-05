@@ -5,6 +5,7 @@ import { ShareButtonGroup } from "../components/testResult/ShareButtonGroup";
 import { TestResultRenderer } from "../components/testResult/TestResultRenderer";
 import { useEffect, useState } from "react";
 import { TESTS } from "../data/TESTS";
+import { GoToHomeButton } from "../components/test/GoToHomeButton";
 
 function TestResult() {
   const navigate = useNavigate();
@@ -50,6 +51,7 @@ function TestResult() {
         renderTestInfo={renderTestInfo}
       />
       <ResultThumbnailList testParam={testParam} />
+      <GoToHomeButton page="Result" />
     </div>
   );
 }

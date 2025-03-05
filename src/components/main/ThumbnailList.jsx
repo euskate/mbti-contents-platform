@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { TESTS } from "../../data/TESTS";
 import { Skeleton } from "antd";
-
 import { Link, useSearchParams } from "react-router-dom";
+import { FloatButton } from "antd";
+import { eventSenderGA } from "../../tools/tools";
 
 function ThumbnailList() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -26,6 +27,10 @@ function ThumbnailList() {
     }
   }, [searchParams]);
 
+  const onClickBackToTop = () => {
+    eventSenderGA("BackToTop", "BackToTopButton", "MainPage");
+  };
+
   return (
     <>
       {testList ? (
@@ -41,6 +46,11 @@ function ThumbnailList() {
       ) : (
         <Skeleton active style={{ height: "20rem" }} />
       )}
+      <FloatButton.BackTop
+        visibilityHeight={400}
+        duration={700}
+        onClick={onClickBackToTop}
+      />
     </>
   );
 }
