@@ -5,6 +5,7 @@ import TestResult from "./page/TestResult";
 import { useEffect } from "react";
 import ReactGA4 from "react-ga4";
 import Privacy from "./page/Privacy";
+import { Blog } from "./page/Blog";
 
 export const base_url = "https://mbti-service.shop";
 
@@ -30,7 +31,8 @@ function App() {
             path="/:testParam/result/:resultParam"
             element={<TestResult />}
           />
-          <Route path="privacy" element={<Privacy />} />
+          <Route path="/blog/:testParam" element={<Blog />} />
+          <Route path="/privacy" element={<Privacy />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -22,7 +22,19 @@
 }
 
 .upperButton:hover,
-.bottomButton:hover {
+.bottomButton:hover,
+.blogButton:hover {
   background-color: brown;
   color: white;
+}
+
+.blogButton {
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: solid 2px brown;
+  background-color: white;
+  color: brown;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
 }

@@ -5,7 +5,7 @@ import {
   RedoOutlined,
   ReloadOutlined,
 } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./resultButtonGroup.module.css";
 import { eventSenderGA } from "../../tools/tools";
 import { base_url } from "../../App";
@@ -35,6 +35,9 @@ export const ResultButtonGroup = ({
   };
   return (
     <div className={styles.mainDiv}>
+      <Link to={`/blog/${testParam}`}>
+        <button className={styles.blogButton}>블로그 보러가기</button>
+      </Link>
       <div className={styles.upperDiv}>
         <button className={styles.upperButton} onClick={onClickCopyUrl}>
           {/* <LinkOutlined /> */}
