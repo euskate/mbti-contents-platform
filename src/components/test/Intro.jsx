@@ -10,6 +10,29 @@ const Intro = ({ info, setMode }) => {
     eventSenderGA("Paging", "Test Start Button", "Intro");
     setMode("quiz");
   };
+  const lang = info?.lang || "Kor";
+
+  const foreignTextObject = {
+    Kor: {
+      startButton: "시작하기",
+      comment: "로 여러분의 성향을 테스트해보세요!",
+      copyLink: "링크 복사",
+      goToOtherTests: "다른 테스트 보러가기",
+    },
+    Eng: {
+      startButton: "Start",
+      comment: " to test your personality!",
+      copyLink: "Copy Link",
+      goToOtherTests: "Go to other tests",
+    },
+    JP: {
+      startButton: "スタート",
+      comment: "であなたの性格をテストしてみてください！",
+      copyLink: "リンクをコピー",
+      goToOtherTests: "他のテストを見る",
+    },
+  };
+
   return (
     <>
       <h1>{info?.mainTitle}</h1>
@@ -38,15 +61,15 @@ const Intro = ({ info, setMode }) => {
         }}
         onClick={onImageClick}
       >
-        시작하기
+        {foreignTextObject[lang].startButton}
       </button>
       <p>
         <span style={{ fontWeight: "bold", color: "brown" }}>
           {info?.mainTitle}
         </span>
-        로 여러분의 성향을 테스트해보세요!
+        {foreignTextObject[lang].comment}
       </p>
-      <IntroButtonGroup testParam={info?.mainUrl} />
+      <IntroButtonGroup testParam={info?.mainUrl} lang={info?.lang} />
       <GoToHomeButton page="Intro" />
     </>
   );

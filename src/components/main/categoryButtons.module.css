@@ -1,12 +1,13 @@
 .categoryButton {
   width: 6rem;
-  padding: 10px 20px;
+  letter-spacing: -0.05rem;
+  padding: 10px 0.5rem;
   border: 2px solid brown;
   border-radius: 20px;
   background-color: white;
   color: rgb(166, 41, 41);
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   margin: 5px;

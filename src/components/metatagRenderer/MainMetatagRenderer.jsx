@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 const MainMetatagRenderer = () => {
   const [searchParams] = useSearchParams();
 
+  // 국제화 완료되지 않음
   const language = searchParams.get("lang") || "Kor";
   if (language === "Kor") {
     return (
@@ -90,11 +91,12 @@ const MainMetatagRenderer = () => {
     return (
       <>
         {/* <!-- Primary Meta Tags --> */}
+        {/* English */}
         <title>MBTI CONTENTS PLATFORM</title>
         <meta name="title" content="MBTI CONTENTS PLATFORM" />
         <meta
           name="description"
-          content="다양한 MBTI 테스트를 할 수 있는 놀이터"
+          content="A playground where you can take various MBTI tests"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href={base_url + "/?lang=Eng"} />

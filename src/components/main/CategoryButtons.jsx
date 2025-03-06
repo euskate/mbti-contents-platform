@@ -5,6 +5,23 @@ function CategoryButtons() {
   const [searchParams] = useSearchParams();
   const [language, setLanguage] = useState("Kor");
   const navigate = useNavigate();
+  const foreignTextsObject = {
+    Kor: {
+      all: "전체",
+      love: "연애",
+      characteristic: "성격",
+    },
+    Eng: {
+      all: "All",
+      love: "Love",
+      characteristic: "Personality",
+    },
+    JP: {
+      all: "すべて",
+      love: "恋愛",
+      characteristic: "性格",
+    },
+  };
 
   useEffect(() => {
     const currentLang = searchParams.get("lang") || "Kor";
@@ -28,19 +45,19 @@ function CategoryButtons() {
         className={styles.categoryButton}
         onClick={() => onCategoryButtonClick("all")}
       >
-        전체
+        {foreignTextsObject[language].all}
       </button>
       <button
         className={styles.categoryButton}
         onClick={() => onCategoryButtonClick("love")}
       >
-        연애
+        {foreignTextsObject[language].love}
       </button>
       <button
         className={styles.categoryButton}
         onClick={() => onCategoryButtonClick("characteristic")}
       >
-        성격
+        {foreignTextsObject[language].characteristic}
       </button>
     </>
   );

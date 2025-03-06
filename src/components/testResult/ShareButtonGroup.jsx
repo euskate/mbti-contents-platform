@@ -15,10 +15,24 @@ export const ShareButtonGroup = ({
 }) => {
   const share_url = `${base_url}/${testParam}/result/${resultParam}`;
   const mainTitle = renderTestInfo?.info?.mainTitle;
+  // 결과페이지의 국제화 아직 적용되지 않음.
+  const lang = renderTestInfo?.info?.lang || "Kor";
   const [copiedText, copy] = useCopyToClipboard();
+
+  const foreignTextObject = {
+    Kor: {
+      shareText: "친구에게 공유하기",
+    },
+    Eng: {
+      shareText: "Share with friends",
+    },
+    JP: {
+      shareText: "友達に共有する",
+    },
+  };
   return (
     <>
-      <h3>친구에게 공유하기</h3>
+      <h3>{lang && foreignTextObject[lang].shareText}</h3>
       <div className={styles.shareButtonDiv}>
         <FacebookShareButton url={share_url} hashtag={`#${mainTitle}`}>
           <FacebookIcon
