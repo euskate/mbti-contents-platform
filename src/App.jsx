@@ -1,11 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Main from "./page/Main";
-import Test from "./page/Test";
-import TestResult from "./page/TestResult";
 import { useEffect } from "react";
 import ReactGA4 from "react-ga4";
-import Privacy from "./page/Privacy";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Blog } from "./page/Blog";
+import Main from "./page/Main";
+import Privacy from "./page/Privacy";
+import { SignUp } from "./page/SignUp";
+import Test from "./page/Test";
+import TestResult from "./page/TestResult";
+import { AuthCallback } from "./page/AuthCallback";
 
 export const base_url = "https://mbti-service.shop";
 
@@ -33,6 +35,8 @@ function App() {
           />
           <Route path="/blog/:testParam" element={<Blog />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/SignUp" element={<SignUp />} />
+          <Route path="/authCallback" element={<AuthCallback />} />
         </Routes>
       </BrowserRouter>
     </>
